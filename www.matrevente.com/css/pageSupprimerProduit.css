@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Reem Kufi Ink', sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .back-arrow {
+    position: absolute;
+    left: 20px;
+    font-size: 40px;
+    color: #48A9A6;
+  }
+
+  .back-arrow i {
+    color: #48A9A6; /* Assure que la couleur de l'icône correspond à celle du titre */
+  }
+
+  main {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  h2 {
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-family: 'Reem Kufi Ink', sans-serif;
+    color: #333;
+    font-style: italic;
+  }
+  
+  .annonce-form {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1000px; /* Réduction de la largeur du formulaire */
+    width: 100%;
+  }
+  
+  .left-section, .right-section {
+    flex: 1;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
+  
+  input[type="text"], 
+  textarea, 
+  select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px; /* Tous les border-radius à 15px */
+    font-family: inherit;
+  }
+  
+  textarea {
+    resize: none;
+    height: 385px; /* Ajustement de la hauteur pour correspondre à la zone de dépôt d'image */
+  }
+  
+  .image-upload {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px; /* Border-radius mis à jour */
+  }
+  
+  .image-upload img {
+    width: 80%;
+  }
+  
+  .image-placeholder {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 100px;
+    color: #aaa;
+  }
+  
+  .image-placeholder img {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles pour le bouton Supprimer */
+  .submit-btn {
+    padding: 15px;
+    background-color: #48A9A6;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    font-family: inherit;
+    margin: 15px auto; /* Ceci centre horizontalement le bouton */
+    display: block; /* Assure que le bouton est considéré comme un bloc pour le centrage */
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #3b8c84; /* Légère variation de la couleur au survol */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .annonce-form {
+      flex-direction: column;/* responsive */
+      width: 90%; /* Limite la largeur des sections à 90% de la page */
+      margin: 0 auto; /* Centre la section avec du blanc sur les côtés */
+
+    }
+  }
+  
+  #overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    z-index: 999; /* Positionne l'overlay sous la popup */
+  }
+
+  #popup {
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    color: #333;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    font-family: 'Reem Kufi Ink', sans-serif;
+    font-size: 18px;
+  }
+
+  #popup-content {
+    display: flex;
+    align-items: center; /* Centre les éléments horizontalement */
+    margin-left: 60px;
+  }
+
+  #boutonSupp {
+    background-color: #48A9A6;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 40px;
+    font-size: 18px;
+    font-family: 'Reem Kufi Ink', sans-serif;
+    margin-left: 20px;
+  }
+
+  #boutonSupp:hover {
+    background-color: #16a085;
+  }
+
+  #boutonAnnuler {
+    background-color: #95a5a6;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 40px;
+    font-size: 18px;
+    font-family: 'Reem Kufi Ink', sans-serif;
+  }
+
+  #boutonAnnuler:hover {
+    background-color: #7f8c8d; /* Gris foncé au survol */
+  } 
+
+  #popup button:hover {
+    background: #777;
+  }

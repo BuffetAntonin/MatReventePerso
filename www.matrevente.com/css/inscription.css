@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Ribeye';
+    src: url('font/Ribeye-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Reem-kufi-ink';
+    src: url('font/ReemKufiInk-Regular.ttf');
+}
+
+body {
+    font-family: 'Reem Kufi Ink', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+    height: 90px;
+    box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.2);
+}
+
+header i {
+    font-size: 50px;
+    color: #5CB5A5;
+    position: absolute;
+    left: 30px;
+}
+
+header h1 {
+    font-family: 'Ribeye';
+    font-size: 50px;
+    color: #5CB5A5;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+    /* margin-top: 100px; Si besoin d'espace au-dessus */
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 50px;
+    width: auto; /* Taille ajustée selon le contenu */
+    max-width: 400px; /* Limite maximale */
+}
+
+.form-container h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    text-align: center;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #5CB5A5;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: #5CB5A5;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #48A9A6;
+}
+
+.error-message {
+    color: rgb(206, 72, 72); /* Le texte d'erreur en rouge */
+    font-size: 14px; /* Taille du texte un peu plus petite */
+    margin-top: 5px; /* Espacement entre le champ et le message */
+    display: block;
+}

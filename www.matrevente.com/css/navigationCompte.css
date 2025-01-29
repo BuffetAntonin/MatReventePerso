@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Ribeye';
+    src: url('font/Ribeye-Regular.ttf');
+}
+@font-face {
+    font-family: 'Reem-kufi-ink';
+    src: url('font/ReemKufiInk-Regular.ttf');
+}
+
+
+.navigationCompte{
+    display: flex;
+    flex-direction: column; /* pour empiler les éléments verticalement */
+    align-items: center; /* centre horizontalement les éléments enfants */
+    font-family: 'Reem-kufi-ink';
+
+}
+
+.navigationCompte h2{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.navigationCompte a{
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.navigationCompte ol {
+    list-style-type: none; /*enlève la numérotation automatique d'un tableau OL*/
+}
+
+#bouton-deconnexion{
+    margin-top: 30px;
+    color:#BD5656;
+}
+
+/* Responsive design (exemple) */
+@media (max-width: 1000px) {
+
+    .navigationCompte h2{
+        margin-bottom: 30px;
+        font-size: 20px;
+
+    }
+    
+    .navigationCompte a{
+        text-decoration: none;
+        font-size: 15px;
+    }
+    
+    .navigationCompte ol {
+        list-style-type: none; /*enlève la numérotation automatique d'un tableau OL*/
+    }
+    
+    #bouton-deconnexion{
+        margin-top: 30px;
+        color:#BD5656;
+        font-size: 15px;
+
+    }
+    
+    
+}

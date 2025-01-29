@@ -1,0 +1,432 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2024-12-06 10:41-0500\n"
+"PO-Revision-Date: 2024-12-06 10:42-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ../../..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: activeCompte.php:28 activeCompte.php:34
+msgid "Compte Activé"
+msgstr "Account activated"
+
+#: activeCompte.php:36
+msgid "Compte activé avec succès. Vous pouvez maintenant retourner à l"
+msgstr "Account successfully activated. You can now go back to the"
+
+#: activeCompte.php:37
+msgid "Accueil"
+msgstr "Main page"
+
+#: ajouterProduit.php:17
+msgid "Ajouter un produit"
+msgstr "Add product"
+
+#: ajouterProduit.php:24
+msgid "Créez votre annonce"
+msgstr "Create ad"
+
+#: ajouterProduit.php:28 modifierProduit.php:27 supprimerProduit.php:21
+msgid "Titre de votre annonce"
+msgstr "Ad title"
+
+#: ajouterProduit.php:30
+msgid "Titre du produit"
+msgstr "Product title"
+
+#: ajouterProduit.php:34 ajouterProduit.php:36 detailProduit.php:33
+#: index.php:26 modifierProduit.php:33 supprimerProduit.php:26
+msgid "Prix"
+msgstr "Price"
+
+#: ajouterProduit.php:40 detailProduit.php:38 modifierProduit.php:39
+#: supprimerProduit.php:31
+msgid "Catégorie du produit"
+msgstr "Product category"
+
+#: ajouterProduit.php:50 ajouterProduit.php:54 modifierProduit.php:54
+msgid "Importer une image"
+msgstr "Upload image"
+
+#: ajouterProduit.php:61 ajouterProduit.php:62
+msgid "Aperçu de l'image"
+msgstr "Image preview"
+
+#: ajouterProduit.php:67 ajouterProduit.php:69 modifierProduit.php:66
+#: supprimerProduit.php:48
+msgid "Description de votre annonce"
+msgstr "Ad description"
+
+#: ajouterProduit.php:72
+msgid "Déposer l'annonce"
+msgstr "Post your ad"
+
+#: compteClient.php:4
+msgid "Compte"
+msgstr "Account"
+
+#: compteClient.php:13 header.php:69
+msgid "Votre compte"
+msgstr "Your account"
+
+#: compteClient.php:18
+msgid "Image 1"
+msgstr ""
+
+#: compteClient.php:22
+msgid "Mes commandes"
+msgstr "My orders"
+
+#: compteClient.php:24
+msgid "Consulter les transactions."
+msgstr "View transactions."
+
+#: compteClient.php:29
+msgid "Image 2"
+msgstr ""
+
+#: compteClient.php:33
+msgid "Mes informations"
+msgstr "My information"
+
+#: compteClient.php:35
+msgid ""
+"Gérer le mot de passe, le courriel et le numéro de téléphone cellulaire."
+msgstr "Manage password, email, and phone number."
+
+#: compteClient.php:42
+msgid "Image 3"
+msgstr ""
+
+#: compteClient.php:45
+msgid "Mes paiements"
+msgstr "My payments"
+
+#: compteClient.php:47
+msgid "Gérer les modes de paiement."
+msgstr "Manage payment methods."
+
+#: compteClient.php:52
+msgid "Image 4"
+msgstr ""
+
+#: compteClient.php:56 header.php:70 navigationCompte.php:15
+msgid "Mes articles en vente"
+msgstr "My items for sale"
+
+#: compteClient.php:58
+msgid "Consulter, supprimer ou modifier des articles."
+msgstr "View, delete or edit items."
+
+#: connexion.php:20
+msgid "Connectez-vous pour plus de fonctionnalités"
+msgstr "Log in for more features"
+
+#: connexion.php:24 inscription.php:36
+msgid "Email"
+msgstr ""
+
+#: connexion.php:28 inscription.php:46
+msgid "Mot de passe"
+msgstr "Password"
+
+#: connexion.php:31 header.php:82 header.php:95
+msgid "Se connecter"
+msgstr "Log in"
+
+#: connexion.php:33
+msgid "Pas encore de compte ?"
+msgstr "Don't have an account yet ?"
+
+#: connexion.php:35 connexion.php:37
+msgid "Créer un compte"
+msgstr "Create an account"
+
+#: detailProduit.php:24
+msgid "Détails du produit"
+msgstr "Product details"
+
+#: detailProduit.php:47 modifierProduit.php:58 supprimerProduit.php:40
+msgid "Image"
+msgstr ""
+
+#: detailProduit.php:55
+msgid "Description de l'annonce"
+msgstr "Ad description "
+
+#: detailProduit.php:64
+msgid "Veuillez vous connecter pour acheter"
+msgstr "Please log in to purchase"
+
+#: header.php:47
+msgid "MatRevente"
+msgstr ""
+
+#: header.php:53
+msgid "Déposer une annonce"
+msgstr "Add your article"
+
+#: header.php:56
+msgid "Sélectionner la langue :"
+msgstr "Select language"
+
+#: header.php:58
+msgid "Français"
+msgstr "French"
+
+#: header.php:59
+msgid "Anglais"
+msgstr "English"
+
+#: header.php:63 header.php:98
+msgid "Mission du site"
+msgstr "Website mission"
+
+#: header.php:66
+msgid "Votre compte :"
+msgstr "Your account "
+
+#: header.php:71
+msgid "Vos achats"
+msgstr "Your purchaces"
+
+#: header.php:75
+msgid "Les achats effectués sur le site"
+msgstr "Purchases made on the website"
+
+#: header.php:78
+msgid "Fermer la session"
+msgstr "Log out"
+
+#: header.php:93
+msgid "Mon compte"
+msgstr "My account"
+
+#: header.php:97
+msgid "Publier une annonce"
+msgstr "Publish an ad"
+
+#: header.php:99
+msgid "Rechercher"
+msgstr "Search "
+
+#: historiqueAchatAdmin.php:29
+msgid "HISTORIQUE DE TOUTES LES TRANSACTIONS DU SITE"
+msgstr "History of all website transactions"
+
+#: historiqueAchatAdmin.php:33
+msgid "Filtrer par vendeur"
+msgstr "Filter by seller"
+
+#: historiqueAchatAdmin.php:34
+msgid "Filtrer par acheteur"
+msgstr "Filter by buyer"
+
+#: historiqueAchatAdmin.php:35
+msgid "Filtrer par n° de commande"
+msgstr "Filter by purchace ID"
+
+#: historiqueAchatClient.php:26
+msgid "HISTORIQUE DE MES ACHATS"
+msgstr "History of all my transactions"
+
+#: historiqueAchatClient.php:33
+msgid "Date de transaction:"
+msgstr "Transaction date"
+
+#: historiqueAchatClient.php:34
+msgid "Prix:"
+msgstr "Price"
+
+#: historiqueAchatClient.php:35
+msgid "Vendeur:"
+msgstr "Seller"
+
+#: historiqueAchatClient.php:36
+msgid "Commande n°"
+msgstr "Order #:"
+
+#: historiqueAchatClient.php:39
+msgid "Image du produit"
+msgstr "Product image"
+
+#: index.php:15
+msgid "Recherche par titre"
+msgstr "Search by title"
+
+#: index.php:18
+msgid "Rechercher..."
+msgstr "Search"
+
+#: index.php:20
+msgid "Filtres"
+msgstr "Filters"
+
+#: index.php:21
+msgid "Vêtements"
+msgstr "Clothes"
+
+#: index.php:22
+msgid "Affaires scolaires"
+msgstr "School supplies"
+
+#: index.php:23
+msgid "Autre"
+msgstr "Other"
+
+#: informationUtilisateur.php:28
+msgid "INFORMATIONS UTILISATEUR"
+msgstr "User information"
+
+#: informationUtilisateur.php:31
+msgid "Avatar de l'utilisateur"
+msgstr "User avatar"
+
+#: informationUtilisateur.php:56
+msgid "Modifier les informations"
+msgstr "Edit information"
+
+#: informationUtilisateur.php:57
+msgid "Confirmer les modifications"
+msgstr "Confirm changes"
+
+#: informationUtilisateur.php:58
+msgid "Annuler les modifications"
+msgstr "Cancel changes"
+
+#: inscription.php:6
+msgid "Inscription"
+msgstr "Registration"
+
+#: inscription.php:18
+msgid "Inscrivez-vous pour plus de fonctionnalités"
+msgstr "Sign up for more features"
+
+#: inscription.php:21
+msgid "Nom"
+msgstr "Last name"
+
+#: inscription.php:26
+msgid "Prénom"
+msgstr "First name"
+
+#: inscription.php:31
+msgid "Adresse"
+msgstr "Address"
+
+#: inscription.php:41
+msgid "Téléphone"
+msgstr "Phone number"
+
+#: inscription.php:51
+msgid "Confirmation du mot de passe"
+msgstr "Confirm password"
+
+#: inscription.php:55
+msgid "S'inscrire"
+msgstr "Sign up"
+
+#: mesArticlesEnVente.php:25
+msgid "MES ARTICLES EN VENTE"
+msgstr "My items for sale"
+
+#: mesArticlesEnVente.php:31
+msgid "Image de l'objet"
+msgstr "Product image "
+
+#: mesArticlesEnVente.php:38
+msgid "Modifier"
+msgstr "Edit"
+
+#: mesArticlesEnVente.php:41 supprimerProduit.php:54
+msgid "Supprimer"
+msgstr "Delete"
+
+#: mission.php:13
+msgid ""
+"Notre site est une plateforme dédiée à la vente d'objets personnels pour les "
+"étudiants ou autres personnes qui veulent vendre ou acheter du matériel. Les "
+"utilisateurs peuvent y mettre en ligne des articles tels que des livres, du "
+"matériel de cours, ou des vêtements par exemple, afin de les vendre à "
+"d'autres étudiants qui cherchent à les acheter. En plus de servir de marché "
+"pratique et économique, notre site s'inscrit dans une démarche écologique en "
+"offrant une seconde vie aux objets. En réutilisant des articles plutôt qu'en "
+"en achetant des neufs, nous contribuons à la réduction des déchets et à la "
+"préservation des ressources naturelles. Notre plateforme permet ainsi non "
+"seulement de réaliser des économies et de générer un revenu supplémentaire, "
+"mais aussi de participer à un effort collectif pour un environnement plus "
+"durable. Que vous soyez vendeur ou acheteur, vous faites partie d'une "
+"initiative visant à allier praticité, économie et respect de l'environnement."
+msgstr ""
+"Our website is a platform dedicated to the sale of personal items for "
+"students or other individuals who wish to sell or purchase materials. Users "
+"can upload items such as books, course supplies, or clothing, for example, "
+"to sell them to other students looking to buy. In addition to serving as a "
+"practical and economical marketplace, our website aligns with an ecological "
+"approach by giving items a second life. By reusing items instead of buying "
+"new ones, we contribute to waste reduction and the preservation of natural "
+"resources. Our platform thus enables users to save money, generate "
+"additional income, and contribute to a collective effort for a more "
+"sustainable environment. Whether you are a seller or a buyer, you are part "
+"of an initiative that combines practicality, economy, and environmental "
+"respect."
+
+#: modifierProduit.php:22
+msgid "Modifiez votre annonce"
+msgstr "Edit your article"
+
+#: modifierProduit.php:23
+msgid "Veuillez reselectionner vos valeurs"
+msgstr "Please reselect values"
+
+#: modifierProduit.php:72
+msgid "Modifier l'annonce"
+msgstr "Edit your ad"
+
+#: navigationCompte.php:11
+msgid "Mon Compte"
+msgstr "My account "
+
+#: navigationCompte.php:13
+msgid "Historique de mes achats"
+msgstr "Purchase history"
+
+#: navigationCompte.php:14
+msgid "Informations du compte"
+msgstr "Account information"
+
+#: navigationCompte.php:17
+msgid "Se déconnecter"
+msgstr "Log out"
+
+#: supprimerProduit.php:17
+msgid "Supprimez votre annonce"
+msgstr "Delete your ad"
+
+#: supprimerProduit.php:59
+msgid "Souhaitez-vous vraiment la suppression de ce produit ?"
+msgstr "Do you really want to delete this ad ?"
+
+#: supprimerProduit.php:61
+msgid "Confirmer la suppression"
+msgstr "Confirm deletion"
+
+#: supprimerProduit.php:63
+msgid "Annuler"
+msgstr "Cancel"
+
+#~ msgid "Acheteur:"
+#~ msgstr "Buyer"
+
+#~ msgid "bonjour"
+#~ msgstr "welcome"
+
+#~ msgid "welcome"
+#~ msgstr "test"

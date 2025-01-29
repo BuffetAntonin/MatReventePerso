@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Ribeye';
+    src: url('font/Ribeye-Regular.ttf');
+}
+@font-face {
+    font-family: 'Reem-kufi-ink';
+    src: url('font/ReemKufiInk-Regular.ttf');
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;
+    box-shadow: 0px 4px 4px -2px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-family: 'Ribeye';
+    font-size: 50px;
+    color: #5CB5A5; /* Vert */
+}
+
+.annonce, .connecter,.dropdown-button {
+    font-family: 'Reem-kufi-ink';
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 30px;
+    border: 0;
+}
+
+.annonce {
+    background-color: #5CB5A5; /* Vert */
+    color: white;
+}
+
+.connecter {
+    color: black;
+}
+
+.rechercher-text {
+    border: 0;
+    border-radius: 30px;
+}
+
+.rechercher {
+    box-shadow: 4px 4px 6px #888;
+    border-radius: 30px;
+}
+
+/* Styles pour le menu déroulant */
+.menu-deroulant {
+    font-family: 'Reem-kufi-ink';
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 90px; /* Juste en dessous du header */
+    width: 80%;
+    left: 10%;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    z-index: 100;
+    margin-top: 10px; /* Ajoute de l'espace entre le header et le menu */
+}
+
+a{
+    text-decoration:none;
+}
+
+.menu-item {
+    font-family: 'Reem-kufi-ink'; /* Assure que la police soit appliquée */
+    padding: 15px;
+    font-size: 18px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #5CB5A5; /* Vert */
+}
+
+.erreurs{
+    color: red;
+}
+.menu-item:hover{
+    background-color: #5CB5A5;
+    color: white;
+}
+
+.menu-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Menu visible en mode mobile */
+.menu-deroulant.visible {
+    display: flex;
+}
+
+/* Style du menu déroulant */
+.dropdown {
+    position: relative; /* Assurez-vous que le conteneur est en position relative */
+    display: inline-block; /* Permet de s'aligner avec les autres éléments */
+}
+
+.dropdown-content {
+    display: none; /* Masquer par défaut */
+    position: absolute; /* Positionner en rapport avec le parent */
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    font-family: 'Reem-kufi-ink'; /* Assure que la police soit appliquée */
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Affiche le menu lors du survol de l'élément dropdown */
+}
+.dropdown-button {
+    background-color: #5CB5A5;
+    color: #f1f1f1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+/* Responsive Styles */
+@media (max-width: 1000px) {
+    nav {
+        justify-content: space-between; /* Assure l'espace entre les éléments */
+    }
+
+    a {
+        display: block;
+        order: 1; /* Logo au centre */
+        flex: 1 0 auto; /* Flex grow, no shrink, auto basis */
+        text-align: center;
+    }
+
+    /* Masquer les autres éléments du nav en mode responsive */
+    .annonce, .rechercher, .connecter, .dropdown-button {
+        display: none;
+    }
+
+    #menuToggle {
+        display: block;
+        order: 2; /* Icône de menu à droite */
+        margin-left: auto; /* Pousse l'icône vers la droite */
+        margin-right: 30px;
+        font-size: 50px;
+        color: #5CB5A5;
+        background-color: transparent; /* Aucun fond */
+        border: none; 
+    }
+}
+
+@media (min-width: 1001px) {
+    #menuToggle {
+        display: none; /* Masquer le bouton de menu en mode grand écran */
+    }
+    #menuMobile{
+        display: none;
+    }
+    .annonce, .connecter, .rechercher {
+        display: block; /* Afficher les autres éléments du nav en grand écran */
+    }
+}

@@ -1,0 +1,112 @@
+@font-face {
+    font-family: 'Ribeye';
+    src: url('font/Ribeye-Regular.ttf');
+}
+@font-face {
+    font-family: 'Reem-kufi-ink';
+    src: url('font/ReemKufiInk-Regular.ttf');
+}
+
+
+
+main {
+    display: flex;
+}
+
+aside {
+    padding : 20px;
+    width: 20%;
+    margin-right: 20px;
+    box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.2);
+    height:100vh;
+}
+#titre{
+    padding:20px;
+    text-align: center;
+    font-family: 'Reem-kufi-ink';
+}
+
+.section-droite{
+    padding : 20px;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.formListeProduitsParUtilisateur{
+    padding : 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+}
+
+
+.item {
+    width: 32%; /* 3 cartes de 32% de largeur chacune, avec un peu d'espace entre elles */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    height:fit-content; /*ADAPTE LA HAUTEUR DE L?ITEM à CE QUIL Y A DEDANS*/
+    min-width: 160px;
+}
+
+img{
+    height: 150px;
+    width: 150px;
+}
+
+
+
+.div-boutons-actions-modifier-supprimer {
+    padding:10px;
+    display: flex;
+    justify-content: center;
+    
+
+    
+   
+}
+.bouton-modifier{
+    background-color: #5cb5a5;
+    color: rgb(241, 241, 241);
+    padding:3px;
+    border-radius: 5px;
+    border-width: 1px;
+    margin-right: 10px;
+}
+.bouton-supprimer{
+    background-color: #bd5656;
+    color: rgb(241, 241, 241);
+    padding:3px;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+
+
+/* Responsive design (exemple) */
+@media (max-width: 1000px) {
+    main {
+        flex-direction: column-reverse;/* Mettre les liens en bas des items en vente et non au dessus en responsive */
+    }
+    .item {
+        width: 100%;
+    }
+    aside{
+        width: auto;
+        height:auto;
+    }
+    div{
+        width: auto;
+    }
+    
+    #titre{
+        text-align: center;
+    }
+    .section-droite{
+        width: auto;
+    }
+    .formListeProduitsParUtilisateur{
+        width: auto;
+    }
+}
