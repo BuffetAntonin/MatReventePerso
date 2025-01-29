@@ -44,9 +44,5 @@ Le développement s'effectue en trois itérations successives :
 - Développement côté client en **HTML5, CSS sémantique et JavaScript vanille (sans jQuery)**.
 - Application des concepts de **programmation orientée objet, design patterns, MVC et DAO** pour garantir une approche structurée et modulaire.
 - **Déploiement en ligne** sur un serveur de développement et un serveur de production à chaque itération, avec optimisation SEO.
-- Utilisation d’un **espace Git** avec :
-  - Documentation en Markdown (`README.md`)
-  - Gestion des tâches via un système de tickets
-  - Notes de déploiement ajoutées à chaque itération
 
 Ce projet constitue une opportunité de développer un produit web de qualité, en appliquant des pratiques professionnelles et en garantissant un développement structuré et évolutif.
