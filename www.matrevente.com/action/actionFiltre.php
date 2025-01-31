@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once "../configuration.php";
 require_once CHEMIN_ACCESSEUR . "AccesseurProduit.php";
 require_once CHEMIN_ACCESSEUR . "AccesseurCategorieProduit.php";

@@ -1,55 +1,55 @@
 function validateForm() {
-    let valid = true;
-    
-    // Clear previous error messages
+    let valid = true;  // Variable pour suivre l'état de la validation
+
+    // Effacer les messages d'erreur précédents
     document.querySelectorAll('.error-message').forEach(function(el) {
-        el.textContent = '';
+        el.textContent = '';  // Réinitialisation des messages d'erreur
     });
 
-    // Nom
+    // Validation du champ "Nom"
     const nom = document.getElementById('nom').value;
     if (nom === '') {
-        document.getElementById('nomError').textContent = 'Le nom est obligatoire.';
-        valid = false;
+        document.getElementById('nomError').textContent = 'Le nom est obligatoire.'; // Afficher l'erreur
+        valid = false;  // Marquer le formulaire comme invalide
     }
 
-    // Prénom
+    // Validation du champ "Prénom"
     const prenom = document.getElementById('prenom').value;
     if (prenom === '') {
-        document.getElementById('prenomError').textContent = 'Le prénom est obligatoire.';
-        valid = false;
+        document.getElementById('prenomError').textContent = 'Le prénom est obligatoire.'; // Afficher l'erreur
+        valid = false;  // Marquer le formulaire comme invalide
     }
 
-    // Adresse
+    // Validation du champ "Adresse"
     const adresse = document.getElementById('adresse').value;
     if (adresse === '') {
-        document.getElementById('adresseError').textContent = 'L\'adresse est obligatoire.';
-        valid = false;
+        document.getElementById('adresseError').textContent = 'L\'adresse est obligatoire.'; // Afficher l'erreur
+        valid = false;  // Marquer le formulaire comme invalide
     }
 
-    // Email validation with regex
+    // Validation du champ "Email" avec une expression régulière (regex)
     const email = document.getElementById('email').value;
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;  // Regex pour l'email
     if (!emailRegex.test(email)) {
-        document.getElementById('emailError').textContent = 'L\'email est invalide.';
-        valid = false;
+        document.getElementById('emailError').textContent = 'L\'email est invalide.'; // Afficher l'erreur
+        valid = false;  // Marquer le formulaire comme invalide
     }
 
-    // Téléphone validation with regex (format français)
+    // Validation du champ "Téléphone" avec une expression régulière (format français)
     const telephone = document.getElementById('telephone').value;
-    const telephoneRegex = /^\+?[1-9]\d{0,2}[\s-]?(\(?\d{1,4}\)?[\s-]?)?\d{1,4}[\s-]?\d{1,9}$/; 
+    const telephoneRegex = /^\+?[1-9]\d{0,2}[\s-]?(\(?\d{1,4}\)?[\s-]?)?\d{1,4}[\s-]?\d{1,9}$/; // Regex pour le téléphone (français)
     if (!telephoneRegex.test(telephone)) {
-        document.getElementById('telephoneError').textContent = 'Le numéro de téléphone est invalide.';
-        valid = false;
+        document.getElementById('telephoneError').textContent = 'Le numéro de téléphone est invalide.'; // Afficher l'erreur
+        valid = false;  // Marquer le formulaire comme invalide
     }
 
-    // Mot de passe
+    // Validation du mot de passe et de la confirmation du mot de passe
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirm-password').value;
     if (password !== confirmPassword) {
-        document.getElementById('confirmPasswordError').textContent = 'Les mots de passe ne correspondent pas.';
-        valid = false;
+        document.getElementById('confirmPasswordError').textContent = 'Les mots de passe ne correspondent pas.'; // Afficher l'erreur
+        valid = false;  // Marquer le formulaire comme invalide
     }
 
-    return valid;
+    return valid;  // Retourner si le formulaire est valide ou non
 }

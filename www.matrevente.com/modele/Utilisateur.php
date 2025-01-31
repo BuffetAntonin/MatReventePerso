@@ -2,7 +2,12 @@
 namespace App\Modele;
 require_once(ROOT . "modele/Profil.php");
 
+/**
+ * La classe Utilisateur représente un utilisateur du système avec toutes ses informations
+ * personnelles, ainsi que les mécanismes de validation des données et d'activation.
+ */
 class Utilisateur {
+    // Définit les filtres de validation pour les différentes propriétés de l'utilisateur.
     public static $filtres = [
         'Id_Utilisateur' => FILTER_VALIDATE_INT,
         'nom' => FILTER_SANITIZE_STRING,
@@ -12,9 +17,10 @@ class Utilisateur {
         'telephone' => FILTER_SANITIZE_STRING,
         'password' => FILTER_SANITIZE_STRING,
         'token'=> FILTER_SANITIZE_STRING,
-
     ];
-    private ?int $Id_Utilisateur ;
+
+    // Propriétés de la classe Utilisateur.
+    private ?int $Id_Utilisateur;
     private ?string $nom;
     private ?string $prenom;
     private ?string $email;
@@ -37,33 +43,42 @@ class Utilisateur {
         "token"=> "Le token n'est pas valide.",
     ];
 
-
-	public function __construct($tableaux) {
+    /**
+     * Le constructeur de la classe Utilisateur initialise les propriétés de l'utilisateur
+     * en fonction des données fournies et effectue des validations sur celles-ci.
+     *
+     * @param array $tableaux Les données fournies pour l'utilisateur.
+     */
+    public function __construct($tableaux) {
         $tableau = filter_var_array($tableaux, self::$filtres);
+
+        // Validation des différentes propriétés de l'utilisateur.
         if (isset($tableaux['Id_Utilisateur']) And empty($tableau['Id_Utilisateur'])) {
-                $this->erreurs["Id_Utilisateur"] = $this->phrasesErreurs["Id_Utilisateur"];
+            $this->erreurs["Id_Utilisateur"] = $this->phrasesErreurs["Id_Utilisateur"];
         }
-        if (isset($tableaux['nom']) and  empty($tableau['nom'])) {
+        if (isset($tableaux['nom']) and empty($tableau['nom'])) {
             $this->erreurs["nom"] = $this->phrasesErreurs["nom"];
         }
         if (isset($tableaux['prenom']) and empty($tableaux['prenom'])) {
-                $this->erreurs["prenom"] = $this->phrasesErreurs["prenom"];
+            $this->erreurs["prenom"] = $this->phrasesErreurs["prenom"];
         }
         if (isset($tableaux['email']) and empty($tableau['email'])) {
-                $this->erreurs["email"] = $this->phrasesErreurs["email"];
+            $this->erreurs["email"] = $this->phrasesErreurs["email"];
         }
-        if (isset($tableaux['adresse']) and empty($tableaux['adresse']) ) {
-                $this->erreurs["adresse"] = $this->phrasesErreurs["adresse"];
+        if (isset($tableaux['adresse']) and empty($tableaux['adresse'])) {
+            $this->erreurs["adresse"] = $this->phrasesErreurs["adresse"];
         }
-        if (isset($tableaux['telephone']) and empty($tableaux['telephone']) ) {
+        if (isset($tableaux['telephone']) and empty($tableaux['telephone'])) {
             $this->erreurs["telephone"] = $this->phrasesErreurs["telephone"];
-    }
-        if (isset($tableaux['password']) and empty($tableau['password']) ) {
-                $this->erreurs["password"] = $this->phrasesErreurs["password"];
+        }
+        if (isset($tableaux['password']) and empty($tableau['password'])) {
+            $this->erreurs["password"] = $this->phrasesErreurs["password"];
         }
         if (isset($tableaux['token']) and empty($tableau['token'])) {
-                $this->erreurs["token"] =$this->phrasesErreurs["token"];
+            $this->erreurs["token"] = $this->phrasesErreurs["token"];
         }
+
+        // Initialisation des propriétés avec les valeurs validées.
         $this->Id_Utilisateur = $tableau["Id_Utilisateur"];
         $this->nom = $tableau["nom"];
         $this->prenom = $tableau["prenom"];
@@ -72,94 +87,115 @@ class Utilisateur {
         $this->telephone = $tableau["telephone"];
         $this->password = $tableau["password"];
         $this->activation_token = bin2hex(random_bytes(16));
-        $this->verifToken=$tableau["token"];
+        $this->verifToken = $tableau["token"];
         $this->profil = new Profil($tableaux);
-	}
+    }
+
     /**
      * Get the value of Id_Utilisateur
-     */ 
-    public function getId_Utilisateur()
-    {
+     *
+     * @return int|null L'ID de l'utilisateur.
+     */
+    public function getId_Utilisateur() {
         return $this->Id_Utilisateur;
     }
 
     /**
      * Get the value of nom
-     */ 
-    public function getNom()
-    {
+     *
+     * @return string|null Le nom de l'utilisateur.
+     */
+    public function getNom() {
         return $this->nom;
     }
 
     /**
      * Get the value of prenom
-     */ 
-    public function getPrenom()
-    {
+     *
+     * @return string|null Le prénom de l'utilisateur.
+     */
+    public function getPrenom() {
         return $this->prenom;
     }
 
     /**
      * Get the value of email
-     */ 
-    public function getEmail()
-    {
+     *
+     * @return string|null L'email de l'utilisateur.
+     */
+    public function getEmail() {
         return $this->email;
     }
 
     /**
      * Get the value of adresse
-     */ 
-    public function getAdresse()
-    {
+     *
+     * @return string|null L'adresse de l'utilisateur.
+     */
+    public function getAdresse() {
         return $this->adresse;
     }
 
-    public function getTelephone()
-    {
+    /**
+     * Get the value of telephone
+     *
+     * @return string|null Le numéro de téléphone de l'utilisateur.
+     */
+    public function getTelephone() {
         return $this->telephone;
     }
 
     /**
      * Get the value of profil
-     */ 
-    public function getProfil()
-    {
+     *
+     * @return Profil|null L'objet Profil associé à l'utilisateur.
+     */
+    public function getProfil() {
         return $this->profil;
     }
 
     /**
      * Get the value of password
-     */ 
-    public function getPassword()
-    {
+     *
+     * @return string Le mot de passe de l'utilisateur, haché en SHA-256.
+     */
+    public function getPassword() {
         return hash('sha256', $this->password);
     }
-    public function tokenHash(){
+
+    /**
+     * Hash the activation token.
+     *
+     * @return string Le token d'activation haché en SHA-256.
+     */
+    public function tokenHash() {
         return hash("sha256", $this->activation_token);
     }
 
     /**
      * Get the value of activation_token
-     */ 
-    public function getActivation_token()
-    {
+     *
+     * @return string|null Le token d'activation.
+     */
+    public function getActivation_token() {
         return $this->activation_token;
     }
 
     /**
      * Get the value of verifToken
-     */ 
-    public function getVerifToken()
-    {
+     *
+     * @return string Le token de vérification haché en SHA-256.
+     */
+    public function getVerifToken() {
         return hash("sha256", $this->verifToken);
     }
 
     /**
      * Get the value of erreurs
-     */ 
-    public function getErreurs()
-    {
+     *
+     * @return array Un tableau contenant les erreurs de validation.
+     */
+    public function getErreurs() {
         $erreurs = $this->erreurs + $this->getProfil()->getErreurs();
         return $erreurs;
     }
@@ -167,88 +203,78 @@ class Utilisateur {
     /**
      * Set the value of Id_Utilisateur
      *
-     * @return  self
-     */ 
-    public function setId_Utilisateur($Id_Utilisateur)
-    {
+     * @param int $Id_Utilisateur L'ID à attribuer à l'utilisateur.
+     * @return self L'instance de la classe Utilisateur.
+     */
+    public function setId_Utilisateur($Id_Utilisateur) {
         $this->Id_Utilisateur = $Id_Utilisateur;
-
         return $this;
     }
 
     /**
      * Set the value of nom
      *
-     * @return  self
-     */ 
-    public function setNom($nom)
-    {
+     * @param string $nom Le nom à attribuer à l'utilisateur.
+     * @return self L'instance de la classe Utilisateur.
+     */
+    public function setNom($nom) {
         $this->nom = $nom;
-
         return $this;
     }
 
     /**
      * Set the value of email
      *
-     * @return  self
-     */ 
-    public function setEmail($email)
-    {
+     * @param string $email L'email à attribuer à l'utilisateur.
+     * @return self L'instance de la classe Utilisateur.
+     */
+    public function setEmail($email) {
         $this->email = $email;
-
         return $this;
     }
 
     /**
      * Set the value of prenom
      *
-     * @return  self
-     */ 
-    public function setPrenom($prenom)
-    {
+     * @param string $prenom Le prénom à attribuer à l'utilisateur.
+     * @return self L'instance de la classe Utilisateur.
+     */
+    public function setPrenom($prenom) {
         $this->prenom = $prenom;
-
         return $this;
     }
 
     /**
      * Set the value of adresse
      *
-     * @return  self
-     */ 
-    public function setAdresse($adresse)
-    {
+     * @param string $adresse L'adresse à attribuer à l'utilisateur.
+     * @return self L'instance de la classe Utilisateur.
+     */
+    public function setAdresse($adresse) {
         $this->adresse = $adresse;
-
         return $this;
     }
 
     /**
      * Set the value of telephone
      *
-     * @return  self
-     */ 
-    public function setTelephone($telephone)
-    {
+     * @param string $telephone Le numéro de téléphone à attribuer à l'utilisateur.
+     * @return self L'instance de la classe Utilisateur.
+     */
+    public function setTelephone($telephone) {
         $this->telephone = $telephone;
-
         return $this;
     }
 
     /**
      * Set the value of password
      *
-     * @return  self
-     */ 
-    public function setPassword($password)
-    {
+     * @param string $password Le mot de passe à attribuer à l'utilisateur.
+     * @return self L'instance de la classe Utilisateur.
+     */
+    public function setPassword($password) {
         $this->password = $password;
-
         return $this;
     }
 }
-
-
-
 ?>
