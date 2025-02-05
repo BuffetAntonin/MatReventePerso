@@ -1,39 +1,54 @@
-<?php 
+<?php
 
+// Importation des classes nécessaires pour la gestion de la connexion utilisateur
 use App\Accesseur\AccesseurConnexion;
 use App\Modele\Utilisateur;
 
+// Inclusion des fichiers de configuration et des classes nécessaires
 require "../configuration.php";
 require CHEMIN_ACCESSEUR . "AccesseurConnexion.php";
 
-// on vérifie qu'une valeur a été saisies dans le email ET dans le mot de passe
+// Vérification si les champs email et mot de passe ont été remplis
 if (trim($_POST['email']) == "" || trim($_POST['password']) == "") {
+    // Si l'un des champs est vide, afficher un message d'erreur
     $msgErr = "Le email et le mot de passe sont obligatoires </br>";
 } else {
-    // on crée une instance de UtilisateurRepository pour pouvoir appeler une de ses méthodes
+    // Si les champs sont remplis, créer une instance du repository pour accéder à la connexion
     $unUtilRepository = new AccesseurConnexion();
-    // passe le valeur dans le modele 
+
+    // Créer une instance du modèle Utilisateur avec les données envoyées par le formulaire
     $unUtilisateurPseudoEtMotDePasse = new Utilisateur($_POST);
-    // on demande au repository l'utilisateur ayant le email et le mot de passe saisi
+
+    // Demander au repository de vérifier les informations de connexion de l'utilisateur
     $unUtilisateur = $unUtilRepository->connexion($unUtilisateurPseudoEtMotDePasse);
+
     if ($unUtilisateur == null) {
-        // pas d'utilisateur avec le email et le mot de passe saisis
+        // Si aucun utilisateur n'est trouvé avec l'email et le mot de passe saisis
         $msgErr = "email et/ou identifiant incorrect(s)";
+        // Rediriger vers la page de connexion
         require_once(ROOT . 'connexion.php');
     } else {
-        // le email et le mot de passe sont corrects
-        // on enregistre dans une variable de session le profil et l'id de l'employé
+        // Si l'utilisateur est trouvé et que les informations sont correctes
+
+        // Vérifier si la session est déjà démarrée, sinon démarrer la session
         if (isset($_SESSION) == false) {
             session_start();
         }
+
+        // Enregistrer les informations de l'utilisateur dans la session
         $_SESSION['id_Utilisateur'] = $unUtilisateur->getId_Utilisateur();
         $_SESSION['nom'] = $unUtilisateur->getNom();
         $_SESSION['prenom'] = $unUtilisateur->getPrenom();
         $_SESSION['Id_Profil'] = $unUtilisateur->getProfil()->getId();
         $_SESSION['Email'] = $unUtilisateur->getEmail();
-        unset($_SESSION['erreur']); // Supprimer la variable de session
-        // Supprimer le cookie en définissant correctement le temps d'expiration dans le passé
+
+        // Supprimer la variable de session d'erreur, s'il y en a
+        unset($_SESSION['erreur']);
+
+        // Supprimer le cookie d'erreur en définissant sa date d'expiration dans le passé
         setcookie("erreur", "", time() - 3600, "/");
+
+        // Rediriger l'utilisateur vers la page d'accueil
         ?>
         <script>
         window.location.href = '../index.php';
